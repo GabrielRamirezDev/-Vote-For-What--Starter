@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <title>Vote For What</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1></h1>
+        <img href="/" src="/img/liberty.png" alt="" />
+    </div>
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <div class="col-sm-6 overflow">
+          <h3>Groups</h3>
+          <ul class="">
+            <li class="">
+              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-sm-6">
+          <h2>Search Users</h2>
+        <% if (user.local.email) { %>
+          <form action="/groups" method="POST">
+            <input type="text" value="<%= user.local.email %>" name="User ID">
+            <button type="submit">Submit</button>
+          </form>
+
+        </div>
+        <% } %>
+
+        <div class="col-sm-6 overflow">
+          <h3>Messages</h3>
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li class="message">
+              <span><%= messages[i].name %></span>
+              <span><%= messages[i].msg %></span>
+              <% for(var j=0; j<comments.length; j++) {%>
+                <% if (messages[i]._id === comments[j].id) { %>
+                  <p><%=comments[j].comment %></p>
+                <% } %>
+              <% } %>
+              <form class="comments" action="/comments" method="POST">
+                <!-- <input type="text" value="<%= user.local.email %>" name="name"> -->
+                <input id="comInput" type="text" placeholder="message" name="msg">
+                <button class="comButton" value="<%= messages[i]._id %>" type="submit">Submit</button>
+              </form>
+              <span><%= messages[i].thumbUp %></span>
+              <img src="/img/<%= messages[i].imgName %>" alt="">
+              <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+              <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+            </li>
+          <% } %>
+          </ul>
+
+        </div>
+        <div class="col-sm-6">
+          <h2>Add a message</h2>
+        <% if (user.local.email) { %>
+          <form action="/messages" method="POST" enctype="multipart/form-data">
+            <input type="text" value="<%= user.local.email %>" name="name">
+            <input type="text" placeholder="message" name="msg">
+            <input type="file" name="file">
+            <button type="submit">Submit</button>
+          </form>
+
+        </div>
+        <% } %>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

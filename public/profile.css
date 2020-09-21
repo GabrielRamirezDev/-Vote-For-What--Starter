@@ -1,0 +1,10 @@
+body {
+  background-color: rgb(85, 201, 241);
+}
+.overflow {
+  overflow-y: scroll;
+  height: 100%;
+  max-height: 70vh;
+  background-color: white;
+  border-radius: 10px;
+}

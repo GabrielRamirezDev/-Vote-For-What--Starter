@@ -1,0 +1,18 @@
+body {
+  padding-top: 80px;
+  word-wrap: break-word;
+  background-color: rgb(253, 241, 214);
+}
+
+
+.title1 {
+  font-size: 4rem;
+  font-family: "Dancing Script", cursive;
+  font-family: "Poppins", sans-serif;
+}
+.title2 {
+  font-family: "Rubik", sans-serif;
+}
+.jumbo {
+  background-color: rgb(85, 201, 241);
+}

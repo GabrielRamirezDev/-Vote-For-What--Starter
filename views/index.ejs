@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vote for What?</title>
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron text-center jumbo">
+        <img class="redirect" src="/img/liberty.png" alt="" />
+        <h1>
+          <span class="title1">Vote for</span>
+          <span class="title2">What?</span>
+        </h1>
+
+        <p>Login or Signup:</p>
+
+        <a href="/login" class="btn btn-default"
+          ><span class="fa fa-user"></span>Login</a
+        >
+        <a href="/signup" class="btn btn-default"
+          ><span class="fa fa-user"></span>Signup</a
+        >
+      </div>
+      <div class="filter-inputs">
+        <div class="form-group position-relative">
+          <input class="form-control focus-reset pl-13" type="text" id="keyword" placeholder="Type Ballot title, keywords">
+        </div>
+        <div class="form-group position-relative">
+            <input class="form-control focus-reset pl-13" type="text" id="keyword" placeholder="Type Location">        </select>
+          <span class="h-100 w-px-50 pos-abs-tl d-flex align-items-center justify-content-center font-size-6"><i class="icon icon-pin-3 text-primary font-weight-bold"></i></span>
+          <form>
+            <input class="submit" type="submit">
+          </form>
+
+        </div>
+      </div>
+      <section>
+        <p id="display"></p>
+      </section>
+    </div>
+  </body>
+</html>
