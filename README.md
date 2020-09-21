@@ -2,7 +2,7 @@
 
 
 ## About The Project
-![screenshot](portfolio image link here)
+![screenshot](https://www.gabe-dev.com/images/voteForWhat.png)
 
  Ballot Initiative Search Engine that enables easy group notifications
 
